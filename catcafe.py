@@ -1,8 +1,12 @@
 
 # Jacqueline Sandoval. Breanna Tepetongo, Adrian Marqetequesias
-drink = ['boba', 'breanna pee', 'jackie diarrhea']
+drink = {'boba': 2.99,
+          'breanna pee' :.99,
+          'jackie diarrhea' : 10.99 }
 chiraw = ['mr Q', 'King V' , 'Chief K', 'MLK']
-pastries =['fish tentacle', 'pompri placenta', 'konguru pickled ramble']
+pastries ={'fish tentacle':  15.00
+            , 'pompri placenta' :6.99
+            , 'konguru pickled ramble': 10.00}
 
 name = input( "What's your name?: " ) #f string so we have to put it in parenthesis but before quotes when referencing it
 def nowantdrink(answer):
