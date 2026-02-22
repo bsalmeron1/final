@@ -10,10 +10,14 @@ pastries ={'fish tentacle':  5
 total=0
 name = input( "What's your name?: " ) #f string so we have to put it in parenthesis but before quotes when referencing it
 def nowantdrink(answer):
-    if answer == "yes": 
+    global total #global for something outside the function to be able to refer to it and change it in the function    
+    if answer == "yes":
         print(f" Awesome {name}-chan!")
         print(f"The drinks are:", str(drink)  )
         drinks = input(f"Choose your drink ^-^ {name}-chan  ")
+        if drinks in drink:
+            price = drink[drinks]
+            total += price
         print(f"Okay {name}-chan, your {drinks} is coming right up!")
         print(f"Here's your {drinks}, {name}-chan! ")
         return drinks
@@ -25,9 +29,13 @@ def nowantdrink(answer):
 
 def nowantpastries(answers):
     if answers == "yes": 
+        global total
         print(f" Awesome {name}-chan!")
         print(f"The pastries are : " ,str(pastries) )
         pastriest = input(f"Choose your pastries {name}-chan ")
+        if pastriest in pastries:
+            price = pastries[pastriest]
+            total += price
         print(f"Okay {name}-chan , your {pastriest} is coming right up!")
         return pastriest
     elif answers == "no":
@@ -45,19 +53,20 @@ def listen(an):
 
 
 print(f"Welcome {name}-Chan, welcome to the Cat Cafe! ^-^") #were gunna make two of these one being  drink one and patry to refer to their seperate lists easier
-answer= input("Do you want a drink?:  ")
-# while True:
-drinks= nowantdrink(answer) 
-answers= input("Do you want a pastries ?:  ")#performs the first loop of asking drink question
-pastriest= nowantpastries(answers)
-an= input("Do you want to listen to art?")
-listen(an) #performs the second iteration of what tolistern tok
+while True: 
+    answer= input("Do you want a drink?:  ")
 
-
+    drinks= nowantdrink(answer) 
+    answers= input("Do you want a pastries ?:  ")#performs the first loop of asking drink question
+    pastriest= nowantpastries(answers)
+    an= input("Do you want to listen to art?")
+    listen(an) #performs the second iteration of what tolistern tok
+    again = input("Would you like to order again? (yes or no): ")
+    if again == "no":
+        break
 
 receipt = input("Do you want your receipt? (yes/no)")
-if receipt == "yes" or "Yes":
-     drinkcost = drinks
-     pastrycost= pastriest
-     hun = drinkcost + pastrycost
-     print(f"Your total is ${hun} {name}-chan! Thank you for coming to the Cat Cafe! ^-^")
+if receipt == "yes":
+    print(f" Receipt for {name}-chan")
+    print(f"Total spent: ${total}")
+    print(f"Thank you for coming to the Cat Cafe! Please come again soon.^-^")
