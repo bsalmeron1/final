@@ -1,12 +1,12 @@
 
 # Jacqueline sandwichhis. Breanna Tepetongo, Adrian Marqetequigluesias
 drink = {'boba': 3,
-          'smoothie pee' :7,
+          'smoothie pear' :7,
           'jonpu choris' : 1 }
 chiraw = ['mr Q', 'King V' , 'Chief K', 'justin b']
 pastries ={'fish tentacle':  10
             , 'pompri placenta' : 12 #the colin sets a price for each pastry and drink in the list so we can refer to it later when we ask if they want a receipt and how much they spent
-            , 'konguru pickled ramble': 2}
+            , ' pickled ramble': 2}
 total=0
 name = input( "~~~~~~~~What's your name Senpai ^-^ ?: ~~~~~~~~~" ) #f string so we have to put it in parenthesis but before quotes when referencing it
 def nowantdrink(answer):
@@ -75,7 +75,7 @@ while True:
     listen(an) #performs the second iteration of what tolistern tok
     again = input("Would you like to order again? (yes or no): ")
     if again == "no":
-        break
+        break #ends drink and pastry loop
 
 receipt = input("Do you want your receipt? (yes/no)")
 if receipt == "yes":
