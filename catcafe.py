@@ -2,10 +2,10 @@
 # Jacqueline sandwichhis. Breanna Tepetongo, Adrian Marqetequigluesias
 drink = {'boba': 3,
           'smoothie pee' :7,
-          'jackie diarrhea' : 1 }
-chiraw = ['mr Q', 'King V' , 'Chief K', 'MLK']
+          'jonpu choris' : 1 }
+chiraw = ['mr Q', 'King V' , 'Chief K', 'justin b']
 pastries ={'fish tentacle':  10
-            , 'pompri placenta' : 12
+            , 'pompri placenta' : 12 #the colin sets a price for each pastry and drink in the list so we can refer to it later when we ask if they want a receipt and how much they spent
             , 'konguru pickled ramble': 2}
 total=0
 name = input( "~~~~~~~~What's your name Senpai ^-^ ?: ~~~~~~~~~" ) #f string so we have to put it in parenthesis but before quotes when referencing it
@@ -13,7 +13,7 @@ def nowantdrink(answer):
     global total #global for something outside the function to be able to refer to it and change it in the function    
     if answer == "yes":
         print(f" Awesome {name}-chan!")
-        print(f"The drink options are:", str(drink)  )
+        print(f"The drink options are:", str(drink)  ) #semicolin allows attatching the string of drinks 
         print()
         drinks = input(f" What would you like {name}-chan? ^-^:")
         if drinks in drink:
@@ -28,17 +28,17 @@ def nowantdrink(answer):
         return drinks
         
     elif answer == "no":
-        print(f"No... {name}-chan, dom't starve yourself, but ok!: ")  #f infront in order to refer to the name in the output of the 
+        print(f"No... {name}-chan, don't starve yourself, but ok!: ")  #f infront in order to refer to the name in the output of the 
         
 
 
-def nowantpastries(answers):
+def nowantpastries(answers): #answers is paramaters
     if answers == "yes": 
-        global total
+        global total # adding global to reference later
         print(f" Okie, {name}-chan!")
-        print(f"The pastries are : " ,str(pastries) )
+        print(f"The pastries are : " ,str(pastries) ) # refers to  the pastries list with prices to give options
         print()
-        pastriest = input(f"Choose your pastries,{name}-chan ")
+        pastriest = input(f"Choose your pastries,{name}-chan ") #gets input 
         if pastriest in pastries:
             price = pastries[pastriest]
             total += price #adds price to list named total so we can refer to it later when we ask if they want a receipt
@@ -46,7 +46,7 @@ def nowantpastries(answers):
         print()
         print()
         print()
-        print(f"Here's your {pastriest}, {name}-chan! Enjoy! ^-^")
+        print(f"Here's your {pastriest}, {name}-chan! Enjoy! ^-^") # needs the {}
         return pastriest
     elif answers == "no":
         print(f"No... {name}-chan, dont starve yourself, but ok!: ")  #f infront in order to refer to the name in the output of the 
